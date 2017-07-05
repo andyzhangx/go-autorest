@@ -10,6 +10,7 @@ var environments = map[string]Environment{
 	"AZUREGERMANCLOUD":       GermanCloud,
 	"AZUREPUBLICCLOUD":       PublicCloud,
 	"AZUREUSGOVERNMENTCLOUD": USGovernmentCloud,
+	"AZURESTACK":             AzureStack,
 }
 
 // Environment represents a set of endpoints for each of Azure's Clouds.
@@ -115,6 +116,27 @@ var (
 		ServiceBusEndpointSuffix:     "servicebus.cloudapi.de",
 		ServiceManagementVMDNSSuffix: "azurecloudapp.de",
 		ResourceManagerVMDNSSuffix:   "cloudapp.microsoftazure.de",
+		ContainerRegistryDNSSuffix:   "azurecr.io",
+	}
+
+	// AzureStack : azure stack on mooncake
+	AzureStack = Environment{
+		Name:                         "AzureStack",
+		ManagementPortalURL:          "https://adminportal.local.azurestack.external/",
+		PublishSettingsURL:           "https://adminportal.local.azurestack.external/publishsettings/index",
+		ServiceManagementEndpoint:    "https://management.core.windows.net/",
+		ResourceManagerEndpoint:      "https://management.local.azurestack.external/",
+		ActiveDirectoryEndpoint:      "https://login.microsoftonline.com/",
+		GalleryEndpoint:              "https://adminportal.local.azurestack.external:30015/",
+		KeyVaultEndpoint:             "https://adminvault.local.azurestack.external/",
+		GraphEndpoint:                "https://graph.windows.net/",
+		StorageEndpointSuffix:        "local.azurestack.external",
+		SQLDatabaseDNSSuffix:         "database.windows.net",
+		TrafficManagerDNSSuffix:      "trafficmanager.net",
+		KeyVaultDNSSuffix:            "adminvault.local.azurestack.external",
+		ServiceBusEndpointSuffix:     "servicebus.azure.com",
+		ServiceManagementVMDNSSuffix: "cloudapp.azure.com",
+		ResourceManagerVMDNSSuffix:   "local.cloudapp.azurestack.external",
 		ContainerRegistryDNSSuffix:   "azurecr.io",
 	}
 )
